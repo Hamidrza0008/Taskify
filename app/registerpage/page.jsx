@@ -20,8 +20,10 @@ const Register = () => {
         })
         const data = await res.json();
         console.log(data.message);
+        setName("")
         setEmail("")
         setPassword("")
+        router.push("/loginpage");
     }
 
     // Same Animation Variants for consistency
