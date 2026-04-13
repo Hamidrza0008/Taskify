@@ -1,26 +1,45 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+/* 1. Poore page (body) ki bahar wali dandi hatane ke liye */
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  overflow: hidden;
+}
+
+/* 2. Andar wali dandi (Custom Scrollbar) */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px; /* Patli aur sundar dandi */
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent; 
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #E2E8F0; /* Light gray color */
+  border-radius: 20px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #CBD5E1; 
+}
+
+/* Firefox ke liye */
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #E2E8F0 transparent;
+}
+:root {
+  --theme-blue: #3174f1;
+  --theme-blue-light: rgba(49, 116, 241, 0.1); /* Ye 10% opacity hai theme color ki */
+}
+
+/* Custom hover state for the list items */
+.task-card-premium:hover {
+  border-color: var(--theme-blue-light);
+  box-shadow: 0 15px 30px -10px rgba(49, 116, 241, 0.1);
+}
+
+.task-card-premium:hover .arrow-circle {
+  background-color: var(--theme-blue);
+  color: white;
 }
